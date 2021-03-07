@@ -6,6 +6,43 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+  //se adiciona a un style
+  document.querySelector(".card").classList.add(generateRandomSuit());
+  //adiciona contenido
+  document.querySelector(".card").innerHTML = generateRandomNumber();
+};
+
+//funcion para obtener numero carta
+let generateRandomNumber = () => {
+  //DEFINIR UN ARREGLO CON LOS NUMEROS ["A","1","2",..]
+  let number = [
+    "A",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
+  let index = Math.floor(Math.random(number) * number.length);
+  //generar los valores de manera aleatoria
+  return number[index];
+};
+
+//funcion para obtener tipos carta
+let generateRandomSuit = () => {
+  let suit = ["diamond", "spade", "heart", "club"];
+
+  let random = Math.floor(Math.random() * suit.length);
+
+  //generar los valores de manera aleatoria
+
+  return suit[random];
 };
